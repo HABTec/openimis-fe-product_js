@@ -167,5 +167,10 @@
   "product.ProductDerivedOperationalIndicators.year": "Year",
   "product.ProductDerivedOperationalIndicators.product": "Product",
   "product.ageMinimal": "Minimum Age",
-  "product.ageMaximal": "Maximum Age"
+  "product.ageMaximal": "Maximum Age",
+  "product.gql_query_products_perms": "Product | Query Products",
+  "product.gql_mutation_products_add_perms": "Product | Mutation Products Add",
+  "product.gql_mutation_products_edit_perms": "Product | Mutation Products Edit",
+  "product.gql_mutation_products_delete_perms": "Product | Mutation Products Delete",
+  "product.gql_mutation_products_duplicate_perms": "Product | Mutation Products Duplicate"
 }
