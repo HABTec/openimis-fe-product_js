@@ -97,6 +97,8 @@ export const toFormValues = (product, shouldDuplicate) => {
     gracePeriodEnrolment: product.gracePeriodEnrolment ?? 0,
     gracePeriodRenewal: product.gracePeriodRenewal ?? 0,
     ceilingInterpretation: product.ceilingInterpretation ?? "HEALTH_FACILITY_TYPE",
+    enrollmentStartDate: product.enrollmentStartDate ?? 12,
+    enrollmentEndDate: product.enrollmentEndDate ?? 19,
   };
 };
 
