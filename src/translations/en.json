@@ -54,7 +54,7 @@
   "product.ProductForm.title": "Product {label}",
   "product.ProductForm.emptyTitle": "New Product",
   "product.FormMainPanel.validitySectionTitle": "Validity",
-  "product.FormMainPanel.PenalitySectionTitle": "Penality",
+  "product.FormMainPanel.PenalitySectionTitle": "Penalty",
   "product.FormMainPanel.accountingSectionTitle": "Accounting",
 
   "product.TabsForm.contributionPlan": "Contribution Plan",
@@ -71,7 +71,7 @@
   "product.EnrollmentTabForm.enrollmentTitle": "Enrollment Period",
   "product.PaymentTabForm.paymentTitle": "Sliding scale",
   "product.PaymentTabForm.urbalScale": "Urban Scale",
-  "product.PaymentTabForm.ruralSclae": "Rural Scale",
+  "product.PaymentTabForm.ruralScale": "Rural Scale",
 
   "product.ceilingDiscrimination": "Ceiling Discrimination",
   "product.ceilingDiscrimination.null": "Select a discriminant",

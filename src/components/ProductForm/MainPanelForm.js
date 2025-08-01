@@ -56,7 +56,6 @@ const MainPanelForm = (props) => {
 
   return (
     <Grid container direction="row">
-      {JSON.stringify(edited)}
       <Grid item xs={3} className={classes.item}>
         <ValidatedTextInput
           itemQueryIdentifier="productCode"

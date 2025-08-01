@@ -34,13 +34,13 @@ const PaymentScaleForm = (props) => {
                     ruralPrices.push(item?.price);
                 }
             });
-            setUrbalInputs(prev => urbanPrices);
-            setRuralInputs(prev => ruralPrices);
+            setUrbalInputs(urbanPrices);
+            setRuralInputs(ruralPrices);
             onEditedChanged({ ...edited, membershipTypes: formatState() })
         }
         else if(!!edited && !!edited.membershipTypes && !Array.isArray(edited?.membershipTypes)){
-            setUrbalInputs(prev => edited?.membershipTypes?.levels?.urban );
-            setRuralInputs(prev => edited?.membershipTypes?.levels?.rural );
+            setUrbalInputs(edited?.membershipTypes?.levels?.urban );
+            setRuralInputs(edited?.membershipTypes?.levels?.rural );
             onEditedChanged({ ...edited, membershipTypes: formatState() })
         }
     }, []);
@@ -90,7 +90,7 @@ const PaymentScaleForm = (props) => {
     return (
         <Grid container spacing={2}>
             <Grid item xs={12}>
-                <SectionTitle label={formatMessage("ruralSclae")} />
+                <SectionTitle label={formatMessage("ruralScale")} />
             </Grid>
             
             {ruralInputs.map((value, index) => (
@@ -140,7 +140,7 @@ const PaymentScaleForm = (props) => {
                 </Grid>
             ))}
             <Grid item xs={12} spacing={2}>
-            <Button color="primary" variant="contained" onClick={addUrbanField}>Add  Urbal Input</Button>
+            <Button color="primary" variant="contained" onClick={addUrbanField}>Add  Urban Scale</Button>
             </Grid>
         </Grid>
     );
