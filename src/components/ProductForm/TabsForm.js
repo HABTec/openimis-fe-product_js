@@ -4,12 +4,11 @@ import { withTheme, withStyles } from "@material-ui/styles";
 import { useTranslations, combine } from "@openimis/fe-core";
 import ItemsTabForm from "./ItemsTabForm";
 import ContributionTabForm from "./ContributionTabForm";
-import PoolingManagementTabForm from "./PoolingManagementTabForm";
 import ServicesTabForm from "./ServicesTabForm";
-import DeductiblesCeilingsTabForm from "./DeductiblesCeilingsTabForm";
 import {useLimitDefaultsQuery} from "../../hooks";
 import {LIMIT_TYPES, PRICE_ORIGINS} from "../../constants";
 import EnrollmentForm from "./EnrollmentForm";
+import PaymentScaleForm from "./PaymentScaleForm";
 
 const CurrentTab = (props) => {
   const { tab } = props;
@@ -21,12 +20,10 @@ const CurrentTab = (props) => {
       return <ItemsTabForm {...props} />;
     case "services":
       return <ServicesTabForm {...props} />;
-    case "deductibles":
-      return <DeductiblesCeilingsTabForm {...props} />;
-    case "pooling":
-      return <PoolingManagementTabForm {...props} />;
     case "enrollment":
       return <EnrollmentForm {...props} />;
+    case "payment":
+      return <PaymentScaleForm {...props} />;
   }
   return null;
 };
@@ -68,9 +65,8 @@ const TabsForm = (props) => {
         <Tab value="contributions" label={formatMessage("contributionPlan")}></Tab>
         <Tab value="items" label={formatMessage("productItems")}></Tab>
         <Tab value="services" label={formatMessage("productServices")}></Tab>
-        <Tab value="deductibles" label={formatMessage("deductibles")}></Tab>
-        <Tab value="pooling" label={formatMessage("pooling")}></Tab>
         <Tab value="enrollment" label={formatMessage("enrollment")}></Tab>
+        <Tab value="payment" label={formatMessage("payment")}></Tab>
       </Tabs>
       <CurrentTab
         tab={activeTab}

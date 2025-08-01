@@ -9,13 +9,11 @@ export const GRAPHQL_USE_PRODUCTS_PRODUCT_FRAGMENT = `
     name
     code
     location {id name uuid code parent {id name uuid code}}
-    dateFrom
-    dateTo
-    maxMembers
+    enrolmentPeriodStartDate
+    enrolmentPeriodEndDate
     validityFrom
     validityTo
     ageMaximal
-    ageMinimal
   }
 `;
 
@@ -30,11 +28,11 @@ export const useProductsQuery = ({ filters }, config) => {
     `
   query (
     $search: String, $first: Int, $last: Int, $before: String, $after: String, $code: String, $name: String, 
-    $dateFrom: DateTime, $dateTo: DateTime, $location: Int, $showHistory: Boolean
+     $location: Int, $showHistory: Boolean
     ) {
     products (
       search: $search, first: $first, last: $last, before: $before, after: $after, code_Icontains: $code, showHistory: $showHistory,
-      name_Icontains: $name, dateFrom_Lte: $dateFrom, dateTo_Gte: $dateTo, location: $location
+      name_Icontains: $name,location: $location
       ) {
       edges {
         node {
@@ -71,41 +69,27 @@ export const GRAPHQL_USE_PRODUCT_PRODUCT_FRAGMENT = `
     code
     name
     ageMaximal
-    ageMinimal
-    maxMembers
     threshold
     location {id uuid code name parent {id uuid name code}}
 
     validityFrom
     validityTo
-    dateFrom
-    dateTo
+    enrolmentPeriodStartDate
+    enrolmentPeriodEndDate
 
     recurrence
-    insurancePeriod
     lumpSum
     premiumAdult
-    premiumChild
-    maxInstallments
     registrationLumpSum
     registrationFee
-    generalAssemblyLumpSum
-    generalAssemblyFee
+    
 
     startCycle1
     startCycle2
     startCycle3
     startCycle4
 
-    renewalDiscountPerc
-    renewalDiscountPeriod
-    enrolmentDiscountPerc
-    enrolmentDiscountPeriod
     ceilingInterpretation
-
-    gracePeriodEnrolment
-    gracePeriodRenewal
-    gracePeriodPayment
 
     accCodePremiums
     accCodeRemuneration
@@ -145,6 +129,15 @@ export const GRAPHQL_USE_PRODUCT_PRODUCT_FRAGMENT = `
       }
 
     administrationPeriod
+    cardReplacementFee
+    membershipTypes {
+        id
+        region
+        district
+        levelType
+        levelIndex
+        price
+      }
   }
 `;
 
