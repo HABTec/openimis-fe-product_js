@@ -54,6 +54,7 @@
   "product.ProductForm.title": "Product {label}",
   "product.ProductForm.emptyTitle": "New Product",
   "product.FormMainPanel.validitySectionTitle": "Validity",
+  "product.FormMainPanel.PenalitySectionTitle": "Penalty",
   "product.FormMainPanel.accountingSectionTitle": "Accounting",
 
   "product.TabsForm.contributionPlan": "Contribution Plan",
@@ -62,11 +63,15 @@
   "product.TabsForm.deductibles": "Deductibles & Ceilings",
   "product.TabsForm.pooling": "Pooling Management",
   "product.TabsForm.capitation": "Capitation Payment",
-  "product.TabsForm.enrollment": "Enrollment Configuration",
+  "product.TabsForm.enrollment": "Enrollment Configuration*",
+  "product.TabsForm.payment": "Sliding Scale*",
 
   "product.ContributionTabForm.discountsSectionTitle": "Discounts",
   "product.ContributionTabForm.graceSectionTitle": "Grace Periods",
   "product.EnrollmentTabForm.enrollmentTitle": "Enrollment Period",
+  "product.PaymentTabForm.paymentTitle": "Sliding scale",
+  "product.PaymentTabForm.urbalScale": "Urban Scale",
+  "product.PaymentTabForm.ruralScale": "Rural Scale",
 
   "product.ceilingDiscrimination": "Ceiling Discrimination",
   "product.ceilingDiscrimination.null": "Select a discriminant",
