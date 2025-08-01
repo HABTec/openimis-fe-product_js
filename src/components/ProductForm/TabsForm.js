@@ -9,6 +9,7 @@ import ServicesTabForm from "./ServicesTabForm";
 import DeductiblesCeilingsTabForm from "./DeductiblesCeilingsTabForm";
 import {useLimitDefaultsQuery} from "../../hooks";
 import {LIMIT_TYPES, PRICE_ORIGINS} from "../../constants";
+import EnrollmentForm from "./EnrollmentForm";
 
 const CurrentTab = (props) => {
   const { tab } = props;
@@ -24,6 +25,8 @@ const CurrentTab = (props) => {
       return <DeductiblesCeilingsTabForm {...props} />;
     case "pooling":
       return <PoolingManagementTabForm {...props} />;
+    case "enrollment":
+      return <EnrollmentForm {...props} />;
   }
   return null;
 };
@@ -67,6 +70,7 @@ const TabsForm = (props) => {
         <Tab value="services" label={formatMessage("productServices")}></Tab>
         <Tab value="deductibles" label={formatMessage("deductibles")}></Tab>
         <Tab value="pooling" label={formatMessage("pooling")}></Tab>
+        <Tab value="enrollment" label={formatMessage("enrollment")}></Tab>
       </Tabs>
       <CurrentTab
         tab={activeTab}

@@ -62,9 +62,11 @@
   "product.TabsForm.deductibles": "Deductibles & Ceilings",
   "product.TabsForm.pooling": "Pooling Management",
   "product.TabsForm.capitation": "Capitation Payment",
+  "product.TabsForm.enrollment": "Enrollment Configuration",
 
   "product.ContributionTabForm.discountsSectionTitle": "Discounts",
   "product.ContributionTabForm.graceSectionTitle": "Grace Periods",
+  "product.EnrollmentTabForm.enrollmentTitle": "Enrollment Period",
 
   "product.ceilingDiscrimination": "Ceiling Discrimination",
   "product.ceilingDiscrimination.null": "Select a discriminant",
