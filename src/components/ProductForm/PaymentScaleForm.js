@@ -26,7 +26,6 @@ const PaymentScaleForm = (props) => {
         const urbanPrices = [];
         const ruralPrices = [];
         if(!!edited && !!edited.membershipTypes && Array.isArray(edited?.membershipTypes) ) {
-            console.log(typeof edited.membershipTypes , edited.membershipTypes)
             edited?.membershipTypes?.forEach(item => {
                 if (item?.levelType === "URBAN") {
                     urbanPrices.push(item?.price);
