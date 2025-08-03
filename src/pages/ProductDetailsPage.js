@@ -41,6 +41,7 @@ const ProductDetailsPage = (props) => {
 
   const onSave = () => {
     setLocked(true);
+    values.membershipTypes = JSON.stringify(values.membershipTypes);
     if (values.uuid) {
       shouldBeDuplicated
         ? duplicateMutation.mutate({

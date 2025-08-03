@@ -132,8 +132,12 @@ export const GRAPHQL_USE_PRODUCT_PRODUCT_FRAGMENT = `
     cardReplacementFee
     membershipTypes {
         id
-        region
-        district
+        region{
+        id}
+        
+        district{
+        id
+        }
         levelType
         levelIndex
         price

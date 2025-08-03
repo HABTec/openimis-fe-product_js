@@ -77,8 +77,8 @@ const PaymentScaleForm = (props) => {
         let numberRural = ruralInputs.filter((value) => !isNaN(value) && value !== '');
         
         return {
-            region: edited?.location?.name,
-            district: edited?.location?.parent?.name,
+            region: edited?.location?.id,
+            district: edited?.location?.parent?.id,
             levels: {
                 urban: numberUrbal,
                 rural: numberRural
