@@ -129,6 +129,13 @@ export const toInputValues = (values) => {
     };
   };
 
+  
+  Object.keys(inputValues).forEach((key) => {
+    if (inputValues[key] === null || inputValues[key] === undefined) {
+      delete inputValues[key];
+    }
+  });
+
   const formatItem = ({ item, id, ...params }) => {
     const { limitNoAdult, limitNoChild, waitingPeriodAdult, waitingPeriodChild, ...restParams } = params;
 
