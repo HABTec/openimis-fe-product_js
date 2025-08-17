@@ -65,7 +65,7 @@ const ContributionTabForm = (props) => {
           module="product"
           min={0}
           required
-          label="Card Replacement Fee"
+          label="CardReplacementFee"
           readOnly={readOnly}
           value={edited?.cardReplacementFee ?? ""}
           onChange={(cardReplacementFee) => onEditedChanged({ ...edited, cardReplacementFee })}
