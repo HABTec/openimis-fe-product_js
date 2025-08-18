@@ -10,7 +10,8 @@ export const validateProductForm = (values, rules, isProductCodeValid) => {
     "name",
     "enrolmentPeriodStartDate",
     "enrolmentPeriodEndDate",
-    "location"
+    "location",
+    "cardReplacementFee"
   ];
   const errors = {};
 
