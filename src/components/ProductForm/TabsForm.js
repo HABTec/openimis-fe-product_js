@@ -16,10 +16,6 @@ const CurrentTab = (props) => {
   switch (tab) {
     case "contributions":
       return <ContributionTabForm {...props} />;
-    case "items":
-      return <ItemsTabForm {...props} />;
-    case "services":
-      return <ServicesTabForm {...props} />;
     case "enrollment":
       return <EnrollmentForm {...props} />;
     case "payment":
@@ -63,8 +59,6 @@ const TabsForm = (props) => {
     <Paper className={classes.paper}>
       <Tabs className={classes.header} value={activeTab} indicatorColor="primary" onChange={handleChange}>
         <Tab value="contributions" label={formatMessage("contributionPlan")}></Tab>
-        <Tab value="items" label={formatMessage("productItems")}></Tab>
-        <Tab value="services" label={formatMessage("productServices")}></Tab>
         <Tab value="enrollment" label={formatMessage("enrollment")}></Tab>
         <Tab value="payment" label={formatMessage("payment")}></Tab>
       </Tabs>

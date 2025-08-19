@@ -33,26 +33,6 @@ const ContributionTabForm = (props) => {
       <Grid item xs={3} className={classes.item}>
         <NumberInput
           module="product"
-          label="maxInstallments"
-          readOnly={readOnly}
-          displayZero
-          value={edited?.maxInstallments}
-          onChange={(maxInstallments) => onEditedChanged({ ...edited, maxInstallments })}
-        />
-      </Grid>
-      <Grid item xs={3} className={classes.item}>
-        <NumberInput
-          module="product"
-          min={0}
-          label="registrationLumpSum"
-          readOnly={readOnly}
-          value={edited?.registrationLumpSum ?? ""}
-          onChange={(registrationLumpSum) => onEditedChanged({ ...edited, registrationLumpSum })}
-        />
-      </Grid>
-      <Grid item xs={3} className={classes.item}>
-        <NumberInput
-          module="product"
           min={0}
           label="registrationFee"
           readOnly={readOnly}
@@ -71,7 +51,7 @@ const ContributionTabForm = (props) => {
           onChange={(cardReplacementFee) => onEditedChanged({ ...edited, cardReplacementFee })}
         />
       </Grid>
-      <Grid item xs={3} className={classes.item}>
+      {/* <Grid item xs={3} className={classes.item}>
         <NumberInput
           module="product"
           min={0}
@@ -90,7 +70,7 @@ const ContributionTabForm = (props) => {
           value={edited?.generalAssemblyFee ?? ""}
           onChange={(generalAssemblyFee) => onEditedChanged({ ...edited, generalAssemblyFee })}
         />
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 };
