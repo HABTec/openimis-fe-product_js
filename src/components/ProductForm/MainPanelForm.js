@@ -107,48 +107,7 @@ const MainPanelForm = (props) => {
           onChange={(location) => onEditedChanged({ ...edited, location: location || edited.location?.parent })}
         />
       </Grid>
-      <Grid item xs={3} className={classes.item}>
-        <NumberInput
-          module="product"
-          min={0}
-          label="memberTreshold"
-          readOnly={readOnly}
-          value={edited?.threshold ?? ""}
-          onChange={(threshold) => onEditedChanged({ ...edited, threshold })}
-          allowDecimals={false}
-        />
-      </Grid>
-      <Grid item xs={3} className={classes.item}>
-        <NumberInput
-          min={0}
-          module="product"
-          label="administrationPeriod"
-          readOnly={readOnly}
-          value={edited?.administrationPeriod ?? ""}
-          onChange={(administrationPeriod) => onEditedChanged({ ...edited, administrationPeriod })}
-          allowDecimals={false}
-        />
-      </Grid>
-      <Grid item xs={3} className={classes.item}>
-        <NumberInput
-          min={0}
-          module="product"
-          label="recurrence"
-          readOnly={readOnly}
-          value={edited?.recurrence ?? ""}
-          onChange={(recurrence) => onEditedChanged({ ...edited, recurrence })}
-        />
-      </Grid>
-      <Grid item xs={3} className={classes.item}>
-        <NumberInput
-          min={0}
-          module="product"
-          label="ageMinimal"
-          readOnly={readOnly}
-          value={edited?.ageMinimal ?? ""}
-          onChange={(ageMinimal) => onEditedChanged({ ...edited, ageMinimal })}
-        />
-      </Grid>
+    
       <Grid item xs={3} className={classes.item}>
         <NumberInput
           min={0}
