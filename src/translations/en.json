@@ -12,7 +12,7 @@
   "product.dedTreatment": "Treatment",
   "product.dedInsuree": "Threshold",
   "product.lumpSum": "Lump Sum",
-  "product.premiumAdult": "Adult Contribution",
+  "product.premiumAdult": "Adult Contribution(%)",
   "product.premiumChild": "Child Contribution",
   "product.maxInstallments": "Max Installments",
   "product.ceilingType": "Ceiling Type",

@@ -20,7 +20,7 @@ const PaymentScaleForm = (props) => {
         const newInputs = [...urbalInputs];
         newInputs[index] = Number(event.target.value);
         setUrbalInputs(newInputs);
-        onEditedChanged({ ...edited, membershipTypes: formatState() })
+        onEditedChanged({ ...edited, membershipTypes: formatState(newInputs , ruralInputs) })
     };
     useEffect(() => {
         const urbanPrices = [];
@@ -35,12 +35,12 @@ const PaymentScaleForm = (props) => {
             });
             setUrbalInputs(urbanPrices);
             setRuralInputs(ruralPrices);
-            onEditedChanged({ ...edited, membershipTypes: formatState() })
+            onEditedChanged({ ...edited, membershipTypes: formatState(urbanPrices , ruralPrices) })
         }
         else if(!!edited && !!edited.membershipTypes && !Array.isArray(edited?.membershipTypes)){
             setUrbalInputs(edited?.membershipTypes?.levels?.urban );
             setRuralInputs(edited?.membershipTypes?.levels?.rural );
-            onEditedChanged({ ...edited, membershipTypes: formatState() })
+            onEditedChanged({ ...edited, membershipTypes: formatState(edited?.membershipTypes?.levels?.urban , edited?.membershipTypes?.levels?.rural) })
         }
     }, []);
     
@@ -53,7 +53,7 @@ const PaymentScaleForm = (props) => {
         const newInputs = [...ruralInputs];
         newInputs[index] = Number(event.target.value);
         setRuralInputs(newInputs);
-        onEditedChanged({ ...edited, membershipTypes: formatState() })
+        onEditedChanged({ ...edited, membershipTypes: formatState(urbalInputs , newInputs) })
     };
 
     const addRuralField = (e) => {
@@ -65,16 +65,18 @@ const PaymentScaleForm = (props) => {
         const newInputs = [...urbalInputs];
         newInputs.splice(index, 1);
         setUrbalInputs(newInputs);
+        onEditedChanged({ ...edited, membershipTypes: formatState(newInputs , ruralInputs) })
     };
 
     const deleteRuralField = (index) => {
         const newInputs = [...ruralInputs];
         newInputs.splice(index, 1);
         setRuralInputs(newInputs);
+        onEditedChanged({ ...edited, membershipTypes: formatState(urbalInputs , newInputs) })
     };
-    const formatState = () => {
-        let numberUrbal = urbalInputs.filter((value) => !isNaN(value) && value !== '');
-        let numberRural = ruralInputs.filter((value) => !isNaN(value) && value !== '');
+    const formatState = (urban = urbalInputs, rural = ruralInputs) => {
+        let numberUrbal = urban.filter((value) => !isNaN(value) && value !== '');
+        let numberRural = rural.filter((value) => !isNaN(value) && value !== '');
         
         return {
             region: edited?.location?.id,
