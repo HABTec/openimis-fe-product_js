@@ -2,6 +2,9 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 import { withTheme, withStyles } from "@material-ui/styles";
 import { combine, useTranslations, NumberInput, useModulesManager } from "@openimis/fe-core";
+import Tooltip from '@material-ui/core/Tooltip';
+import Icon from '@material-ui/core/Icon';
+import InfoIcon from '@material-ui/icons/Info';
 
 const ContributionTabForm = (props) => {
   const { edited, onEditedChanged, readOnly, classes } = props;
@@ -10,25 +13,26 @@ const ContributionTabForm = (props) => {
   return (
     <Grid container>
       <Grid item xs={3} className={classes.item}>
-        <NumberInput
-          module="product"
-          min={0}
-          label="lumpSum"
-          required
-          readOnly={readOnly}
-          value={edited?.lumpSum ?? ""}
-          onChange={(lumpSum) => onEditedChanged({ ...edited, lumpSum })}
-        />
-      </Grid>
-      <Grid item xs={3} className={classes.item}>
-        <NumberInput
-          module="product"
-          min={0}
-          label="premiumAdult"
-          readOnly={readOnly}
-          value={edited?.premiumAdult ?? ""}
-          onChange={(premiumAdult) => onEditedChanged({ ...edited, premiumAdult })}
-        />
+        <Grid container justifyContent="center"
+          alignItems="center" spacing={1}>
+          <Grid item xs={1}>
+            <Tooltip title="Enter a percentage value. This determines how much the adults will pay out of the family package.">
+              <InfoIcon style={{ fontSize: 15 }} />
+            </Tooltip>
+          </Grid>
+          <Grid item xs={11}>
+            <NumberInput
+              module="product"
+              min={0}
+              max={100}
+              required
+              label="premiumAdult"
+              readOnly={readOnly}
+              value={edited?.premiumAdult ?? 75}
+              onChange={(premiumAdult) => onEditedChanged({ ...edited, premiumAdult })}
+            />
+          </Grid>
+        </Grid>
       </Grid>
       <Grid item xs={3} className={classes.item}>
         <NumberInput

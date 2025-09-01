@@ -70,6 +70,7 @@
   "product.ContributionTabForm.discountsSectionTitle": "Discounts",
   "product.ContributionTabForm.graceSectionTitle": "Grace Periods",
   "product.EnrollmentTabForm.enrollmentTitle": "Enrollment Period",
+  "product.EnrollmentTabForm.converanceTitle": "Insurance Converage Period",
   "product.PaymentTabForm.paymentTitle": "Sliding scale",
   "product.PaymentTabForm.urbalScale": "Urban Scale",
   "product.PaymentTabForm.ruralScale": "Rural Scale",

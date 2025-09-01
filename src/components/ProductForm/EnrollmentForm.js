@@ -35,7 +35,31 @@ const EnrollmentForm = (props) => {
                     onChange={(endDate) => onEditedChanged({ ...edited, enrolmentPeriodEndDate: endDate })}
                 />
             </Grid>
-
+            <Grid item xs={12}>
+                <SectionTitle label={formatMessage("converanceTitle")} />
+            </Grid>
+            <Grid item xs={6} className={classes.item}>
+                <PublishedComponent
+                    pubRef="core.DatePicker"
+                    value={edited?.insuranceCoverageStartDate}
+                    required
+                    readOnly={readOnly}
+                    module="product"
+                    label="product.dateFrom"
+                    onChange={(startDate) => onEditedChanged({ ...edited, insuranceCoverageStartDate: startDate })}
+                    />
+            </Grid>
+            <Grid item xs={6} className={classes.item}>
+                <PublishedComponent
+                    pubRef="core.DatePicker"
+                    value={edited?.insuranceCoverageEndDate}
+                    module="product"
+                    label="product.dateTo"
+                    required 
+                    readOnly={readOnly}
+                    onChange={(endDate) => onEditedChanged({ ...edited, insuranceCoverageEndDate: endDate })}
+                />
+            </Grid>
 
         </Grid>
     );
