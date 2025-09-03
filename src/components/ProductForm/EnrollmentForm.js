@@ -41,23 +41,23 @@ const EnrollmentForm = (props) => {
             <Grid item xs={6} className={classes.item}>
                 <PublishedComponent
                     pubRef="core.DatePicker"
-                    value={edited?.insuranceCoverageStartDate}
+                    value={edited?.coveragePeriodStartDate}
                     required
                     readOnly={readOnly}
                     module="product"
                     label="product.dateFrom"
-                    onChange={(startDate) => onEditedChanged({ ...edited, insuranceCoverageStartDate: startDate })}
+                    onChange={(startDate) => onEditedChanged({ ...edited, coveragePeriodStartDate: startDate })}
                     />
             </Grid>
             <Grid item xs={6} className={classes.item}>
                 <PublishedComponent
                     pubRef="core.DatePicker"
-                    value={edited?.insuranceCoverageEndDate}
+                    value={edited?.coveragePeriodEndDate}
                     module="product"
                     label="product.dateTo"
                     required 
                     readOnly={readOnly}
-                    onChange={(endDate) => onEditedChanged({ ...edited, insuranceCoverageEndDate: endDate })}
+                    onChange={(endDate) => onEditedChanged({ ...edited, coveragePeriodEndDate: endDate })}
                 />
             </Grid>
 
