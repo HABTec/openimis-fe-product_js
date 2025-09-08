@@ -55,17 +55,27 @@ const ContributionTabForm = (props) => {
           onChange={(cardReplacementFee) => onEditedChanged({ ...edited, cardReplacementFee })}
         />
       </Grid>
-      {/* <Grid item xs={3} className={classes.item}>
+      <Grid item xs={3} className={classes.item}>
         <NumberInput
           module="product"
           min={0}
-          label="generalAssemblyLumpSum"
+          max={100}
+          label="additionalWifePayment"
           readOnly={readOnly}
-          value={edited?.generalAssemblyLumpSum ?? ""}
-          onChange={(generalAssemblyLumpSum) => onEditedChanged({ ...edited, generalAssemblyLumpSum })}
+          value={edited?.additionalSpouseContribution ?? ""}
+          onChange={(additionalSpouseContribution) => onEditedChanged({ ...edited, additionalSpouseContribution })}
         />
       </Grid>
       <Grid item xs={3} className={classes.item}>
+        <NumberInput
+          module="product"
+          label="penalityFee"
+          readOnly={readOnly}
+          value={edited?.penaltyPrice ?? ""}
+          onChange={(penaltyPrice) => onEditedChanged({ ...edited, penaltyPrice })}
+        />
+      </Grid>
+      {/* <Grid item xs={3} className={classes.item}>
         <NumberInput
           module="product"
           min={0}
