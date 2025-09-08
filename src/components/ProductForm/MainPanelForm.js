@@ -107,7 +107,17 @@ const MainPanelForm = (props) => {
           onChange={(location) => onEditedChanged({ ...edited, location: location || edited.location?.parent })}
         />
       </Grid>
-    
+    <Grid item xs={3} className={classes.item}>
+        <PublishedComponent
+          pubRef="location.LocationPicker"
+          onChange={(location) =>onEditedChanged({ ...edited, location: location || edited.location?.parent?.parent })}
+          required
+          readOnly={readOnly}
+          // filterOptions={filterParents}
+          value={edited.location?.parent?.parent ? edited.location : null}
+          locationLevel={2}
+        />
+      </Grid>
       <Grid item xs={3} className={classes.item}>
         <NumberInput
           min={0}
