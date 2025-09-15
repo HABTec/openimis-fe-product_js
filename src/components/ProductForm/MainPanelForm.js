@@ -13,6 +13,7 @@ import {
   useTranslations,
   ValidatedTextInput,
   withModulesManager,
+  decodeId
 } from "@openimis/fe-core";
 import {
   clearProduct,
@@ -53,7 +54,6 @@ const MainPanelForm = (props) => {
     if ((!!edited.id && inputValue === savedProductCode) || (!savedProductCode && !!edited.id)) return false;
     return true;
   };
-
   return (
     <Grid container direction="row">
       <Grid item xs={3} className={classes.item}>
@@ -89,9 +89,8 @@ const MainPanelForm = (props) => {
       <Grid item xs={3} className={classes.item}>
         <PublishedComponent
           pubRef="location.RegionPicker"
-          value={edited.location?.parent ?? edited.location}
+          value={edited.location?.parent?.parent ?? edited.location?.parent ?? edited.location }
           readOnly={readOnly}
-          required
           withNull={false}
           onChange={(location) => onEditedChanged({ ...edited, location })}
         />
@@ -101,7 +100,6 @@ const MainPanelForm = (props) => {
           region={edited.location?.parent || edited.location}
           value={edited.location?.parent ? edited.location : null}
           pubRef="location.DistrictPicker"
-          required
           withNull={false}
           readOnly={readOnly}
           onChange={(location) => onEditedChanged({ ...edited, location: location || edited.location?.parent })}
@@ -128,6 +126,7 @@ const MainPanelForm = (props) => {
           onChange={(ageMaximal) => onEditedChanged({ ...edited, ageMaximal })}
         />
       </Grid>
+     
     </Grid>
   );
 };
