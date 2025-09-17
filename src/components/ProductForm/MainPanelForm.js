@@ -98,7 +98,7 @@ const MainPanelForm = (props) => {
       <Grid item xs={3} className={classes.item}>
         <PublishedComponent
           region={edited.location?.parent || edited.location}
-          value={edited.location?.parent ? edited.location : null}
+          value={edited.location?.parent?.parent ? edited.location.parent : null}
           pubRef="location.DistrictPicker"
           withNull={false}
           readOnly={readOnly}

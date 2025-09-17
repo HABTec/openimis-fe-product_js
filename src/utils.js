@@ -85,9 +85,9 @@ export const toFormValues = (product, shouldDuplicate) => {
   return {
     ...product,
     code: shouldDuplicate ? "" : product.code ?? "",
-    lumpSum: product.lumpSum ?? 0,
-    ageMaximal: product.ageMaximal ?? 0,
-    ceilingInterpretation: product.ceilingInterpretation ?? "HEALTH_FACILITY_TYPE",
+    chfIdFormat: 2,
+    ageMaximal: product.ageMaximal ? Number(product.ageMaximal) : 0,
+    
     enrollmentStartDate: product.enrollmentStartDate ?? null,
     enrollmentEndDate: product.enrollmentEndDate ?? null,
   };
@@ -157,10 +157,9 @@ export const toInputValues = (values) => {
     ...inputValues,
     services: hasEditedServices ? services.map(formatService) : undefined,
     items: hasEditedItems ? items.map(formatItem) : undefined,
-    uuid,
-    ageMaximal,
+    ageMaximal: Number(ageMaximal),
     code: code,
-    locationId: decodeId(location?.id),
+    locationId:Number(decodeId(location?.id)),
     conversionProductUuid: conversionProduct?.uuid,
     ceilingType: ceilingType,
   };
