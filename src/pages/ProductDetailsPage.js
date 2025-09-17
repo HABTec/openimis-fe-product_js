@@ -38,11 +38,48 @@ const ProductDetailsPage = (props) => {
     return pathname.includes("duplicate");
   };
   const shouldBeDuplicated = shouldDuplicate(location);
+  function transformMembershipTypes(data) {
+  if (!Array.isArray(data)) {
+    return JSON.stringify(data ?? {});
+  }
+
+  if (data.length === 0) {
+    return JSON.stringify({ region: "", district: "", levels: { urban: [], rural: [] } });
+  }
+
+  const firstItem = data[0];
+  const regionName = firstItem?.region?.name ?? "";
+  const districtName = firstItem?.district?.name ?? "";
+
+  const output = {
+    region: regionName,
+    district: districtName,
+    levels: { urban: [], rural: [] },
+  };
+
+  data.forEach(item => {
+    const count = Number(item.levelIndex) || 0;
+
+    const price = item.price ?? 0;
+
+    const priceArray = Array.from({ length: count }, () => price);
+
+    if (item.levelType === "URBAN") {
+      output.levels.urban.push(...priceArray);
+    } else if (item.levelType === "RURAL") {
+      output.levels.rural.push(...priceArray);
+    }
+  });
+
+  return JSON.stringify(output);
+}
+
 
   const onSave = () => {
     setLocked(true);
-    values.membershipTypes = JSON.stringify(values.membershipTypes);
+    
     if (values.uuid) {
+      values.membershipTypes = transformMembershipTypes(values.membershipTypes)
       shouldBeDuplicated
         ? duplicateMutation.mutate({
             ...toInputValues(values),
@@ -53,6 +90,7 @@ const ProductDetailsPage = (props) => {
             clientMutationLabel: formatMessageWithValues("updateMutation.label", { name: values.name }),
           });
     } else {
+      values.membershipTypes = JSON.stringify(values.membershipTypes);
       createMutation.mutate({
         ...toInputValues(values, shouldBeDuplicated),
         clientMutationLabel: formatMessageWithValues("createMutation.label", { name: values.name }),

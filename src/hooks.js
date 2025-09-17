@@ -76,6 +76,8 @@ export const GRAPHQL_USE_PRODUCT_PRODUCT_FRAGMENT = `
     validityTo
     enrolmentPeriodStartDate
     enrolmentPeriodEndDate
+    coveragePeriodStartDate
+    coveragePeriodEndDate
 
     recurrence
     lumpSum
@@ -133,9 +135,11 @@ export const GRAPHQL_USE_PRODUCT_PRODUCT_FRAGMENT = `
     membershipTypes {
         id
         region{
+        name
         id}
         
         district{
+        name
         id
         }
         levelType
@@ -216,10 +220,10 @@ export const useLimitDefaultsQuery = (config) => {
 export const useProductCreateMutation = () => {
   const mutation = useGraphqlMutation(
     `
-    mutation ($input: CreateProductMutationInput!) {
-      createProduct(input: $input) {
-        internalId
-        clientMutationId
+    mutation ($input: CreateProductInput!) {
+      createProductCustom(input: $input) {
+        ok
+        message
       }
     }
   `,
@@ -232,10 +236,10 @@ export const useProductCreateMutation = () => {
 export const useProductUpdateMutation = () => {
   const mutation = useGraphqlMutation(
     `
-    mutation ($input: UpdateProductMutationInput!) {
-      updateProduct(input: $input) {
-        internalId
-        clientMutationId
+    mutation ($input: CreateProductInput!) {
+      createProductCustom(input: $input) {
+        ok
+        message
       }
     }
   `,

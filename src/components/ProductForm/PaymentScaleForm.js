@@ -79,8 +79,8 @@ const PaymentScaleForm = (props) => {
         let numberRural = rural.filter((value) => !isNaN(value) && value !== '');
         
         return {
-            region:edited?.location?.parent?.name,
-            district:edited?.location?.name,
+            region:edited?.location?.parent?.parent?.name ?? edited?.location?.parent?.name ?? edited?.location?.parent?.name,
+            district:edited?.location?.parent?.parent?.name ? edited?.location?.parent?.name : edited?.location?.name,
             levels: {
                 urban: numberUrbal,
                 rural: numberRural
@@ -90,6 +90,7 @@ const PaymentScaleForm = (props) => {
 
     return (
         <Grid container spacing={2}>
+            
             <Grid item xs={12}>
                 <SectionTitle label={formatMessage("ruralScale")} />
             </Grid>
