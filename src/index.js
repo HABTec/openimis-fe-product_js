@@ -65,7 +65,7 @@ const DEFAULT_CONFIG = {
   ],
   "refs": [
     { key: "product.ProductPicker", ref: ProductPicker },
-    { key: "product.ProductPicker.projection", ref: ["id", "code", "name", "location{id}"] },
+    { key: "product.ProductPicker.projection", ref: ["id", "code", "name", "location{id}" , "membershipTypes{id region { name id } district { name id } levelType levelIndex price  }"] },
     { key: "product.ProductPicker.sort", ref: "product__code" },
 
     // Routes
