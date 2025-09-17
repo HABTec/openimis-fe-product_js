@@ -108,60 +108,41 @@ export const toInputValues = (values) => {
     code,
     location,
     ageMaximal,
-    conversionProduct,
-    validityTo,
-    validityFrom,
-    hasEditedServices,
-    hasEditedItems,
-    items,
-    services,
-    ceilingType,
-    maxInstallments,
     ...inputValues
   } = values;
 
-  const formatService = ({ service, id, ...params }) => {
-    const { limitNoAdult, limitNoChild, waitingPeriodAdult, waitingPeriodChild, ...restParams } = params;
-
-    return {
-      serviceUuid: service.uuid,
-      limitNoAdult: limitNoAdult === EMPTY_STRING ? null : parseInt(limitNoAdult),
-      limitNoChild: limitNoChild === EMPTY_STRING ? null : parseInt(limitNoChild),
-      waitingPeriodAdult: waitingPeriodAdult === EMPTY_STRING ? null : parseInt(waitingPeriodAdult),
-      waitingPeriodChild: waitingPeriodChild === EMPTY_STRING ? null : parseInt(waitingPeriodChild),
-      ...restParams,
-    };
-  };
+ const allowedKeys = [
+    "code",
+    "name",
+    "lumpSum",
+    "cardReplacementFee",
+    "premiumAdult",
+    "additionalSpouseContribution",
+    "penaltyPrice",
+    "membershipTypes",
+    "ageMaximal",
+    "chfIdFormat",
+    "enrolmentPeriodStartDate",
+    "enrolmentPeriodEndDate",
+    "coveragePeriodStartDate",
+    "coveragePeriodEndDate",
+    "hasNoIndigent",
+    "locationId",
+    "clientMutationId",
+    "clientMutationLabel",
+  ];
 
   
-  Object.keys(inputValues).forEach((key) => {
-    if (inputValues[key] === null || inputValues[key] === undefined) {
-      delete inputValues[key];
-    }
-  });
+   const safeValues = Object.fromEntries(
+    Object.entries(inputValues).filter(([key]) => allowedKeys.includes(key))
+  );
 
-  const formatItem = ({ item, id, ...params }) => {
-    const { limitNoAdult, limitNoChild, waitingPeriodAdult, waitingPeriodChild, ...restParams } = params;
-
-    return {
-      itemUuid: item.uuid,
-      limitNoAdult: limitNoAdult === EMPTY_STRING ? null : parseInt(limitNoAdult),
-      limitNoChild: limitNoChild === EMPTY_STRING ? null : parseInt(limitNoChild),
-      waitingPeriodAdult: waitingPeriodAdult === EMPTY_STRING ? null : parseInt(waitingPeriodAdult),
-      waitingPeriodChild: waitingPeriodChild === EMPTY_STRING ? null : parseInt(waitingPeriodChild),
-      ...restParams,
-    };
-  };
 
   const val = {
-    ...inputValues,
-    services: hasEditedServices ? services.map(formatService) : undefined,
-    items: hasEditedItems ? items.map(formatItem) : undefined,
+    ...safeValues,
     ageMaximal: Number(ageMaximal),
     code: code,
     locationId:Number(decodeId(location?.id)),
-    conversionProductUuid: conversionProduct?.uuid,
-    ceilingType: ceilingType,
   };
 
   return val;
