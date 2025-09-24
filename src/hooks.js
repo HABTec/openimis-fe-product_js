@@ -250,8 +250,8 @@ export const useProductCreateMutation = () => {
 export const useProductUpdateMutation = () => {
   const mutation = useGraphqlMutation(
     `
-    mutation ($input: CreateProductInput!) {
-      createProductCustom(input: $input) {
+    mutation ($input: ProductInputCustom!) {
+      updateProductCustom(input: $input) {
         ok
         message
       }

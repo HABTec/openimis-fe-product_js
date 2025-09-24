@@ -112,6 +112,7 @@ export const toInputValues = (values) => {
   } = values;
 
  const allowedKeys = [
+    "uuid",
     "code",
     "name",
     "lumpSum",
@@ -142,6 +143,7 @@ export const toInputValues = (values) => {
     ...safeValues,
     ageMaximal: Number(ageMaximal),
     code: code,
+    uuid: uuid,
     locationId:Number(decodeId(location?.id)),
   };
 
