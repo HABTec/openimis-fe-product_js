@@ -98,12 +98,15 @@ export const GRAPHQL_USE_PRODUCT_PRODUCT_FRAGMENT = `
     premiumAdult
     registrationLumpSum
     registrationFee
+    additionalSpouseContribution
     
 
     startCycle1
     startCycle2
     startCycle3
     startCycle4
+    penalityFormula
+    penaltyPrice
 
     ceilingInterpretation
 
@@ -234,10 +237,10 @@ export const useLimitDefaultsQuery = (config) => {
 export const useProductCreateMutation = () => {
   const mutation = useGraphqlMutation(
     `
-    mutation ($input: CreateProductInput!) {
+    mutation ($input: CreateProductCustomMutationInput!) {
       createProductCustom(input: $input) {
-        ok
-        message
+        internalId
+        clientMutationId
       }
     }
   `,
@@ -250,10 +253,10 @@ export const useProductCreateMutation = () => {
 export const useProductUpdateMutation = () => {
   const mutation = useGraphqlMutation(
     `
-    mutation ($input: ProductInputCustom!) {
+    mutation ($input: UpdateProductCustomMutationInput!) {
       updateProductCustom(input: $input) {
-        ok
-        message
+        internalId
+        clientMutationId
       }
     }
   `,
