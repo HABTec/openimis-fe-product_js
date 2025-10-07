@@ -122,6 +122,7 @@ export const toInputValues = (values) => {
     "penaltyPrice",
     "membershipTypes",
     "ageMaximal",
+    "registrationFee",
     "chfIdFormat",
     "enrolmentPeriodStartDate",
     "enrolmentPeriodEndDate",
