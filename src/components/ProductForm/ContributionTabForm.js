@@ -13,7 +13,7 @@ const ContributionTabForm = (props) => {
   const { edited, onEditedChanged, readOnly, classes } = props;
   const modulesManager = useModulesManager();
   const { formatMessage } = useTranslations("product.ContributionTabForm", modulesManager);
-  const conf = modulesManager.getConf("fe-product", "penalityConfig", [])
+  const conf = modulesManager.getConf("product", "penalityConfig", [])
   const inputRef = useRef(null);
 
   const insertAtCursor = (text) => {
@@ -46,7 +46,6 @@ const ContributionTabForm = (props) => {
   return (
     <Grid container>
       <Grid item xs={3} className={classes.item}>
-        {/* {JSON.stringify(conf)} */}
         <Grid container justifyContent="center"
           alignItems="center" spacing={1}>
           <Grid item xs={1}>
