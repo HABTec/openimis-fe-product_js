@@ -14,7 +14,9 @@ export const validateProductForm = (values, rules, isProductCodeValid) => {
     "coveragePeriodEndDate",
     "location",
     "cardReplacementFee",
-    "membershipTypes"
+    "membershipTypes",
+    "premiumAdult",
+    "additionalSpouseContribution"
   ];
   const errors = {};
 
@@ -119,7 +121,7 @@ export const toInputValues = (values) => {
     "cardReplacementFee",
     "premiumAdult",
     "additionalSpouseContribution",
-    "penaltyPrice",
+    "penalityFormula",
     "membershipTypes",
     "ageMaximal",
     "registrationFee",

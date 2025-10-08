@@ -61,7 +61,7 @@ const ContributionTabForm = (props) => {
               required
               label="premiumAdult"
               readOnly={readOnly}
-              value={edited?.premiumAdult ?? 75}
+              value={edited?.premiumAdult ?? ""}
               onChange={(premiumAdult) => onEditedChanged({ ...edited, premiumAdult })}
             />
           </Grid>
