@@ -23,11 +23,11 @@ const ContributionTabForm = (props) => {
     if (!input) return; // safety check
     const start = input.selectionStart;
     const end = input.selectionEnd;
-    const value = edited?.formula ?? "";
+    const value = edited?.penalityFormula ?? "";
     const newValue =
       value.substring(0, start) + text + value.substring(end);
 
-    onEditedChanged({...edited , formula: newValue});
+    onEditedChanged({...edited , penalityFormula: newValue});
 
     // after state update, restore cursor just after inserted text
     setTimeout(() => {
@@ -99,15 +99,7 @@ const ContributionTabForm = (props) => {
           onChange={(additionalSpouseContribution) => onEditedChanged({ ...edited, additionalSpouseContribution })}
         />
       </Grid>
-      <Grid item xs={3} className={classes.item}>
-        <NumberInput
-          module="product"
-          label="penalityFee"
-          readOnly={readOnly}
-          value={edited?.penaltyPrice ?? ""}
-          onChange={(penaltyPrice) => onEditedChanged({ ...edited, penaltyPrice })}
-        />
-      </Grid>
+     
       <Grid item xs={12} className={classes.item} >
         <Grid container justifyContent="center" spacing={3}>
           <Grid item xs={6}>
@@ -115,11 +107,11 @@ const ContributionTabForm = (props) => {
               module="product"
               required
               error={isValidMathExpression(edited?.penalityFormula ?? "")}
-              label="Panishment Formula"
+              label="PanishmentFormula"
               readOnly={readOnly}
-              value={edited?.formula ?? ""}
+              value={edited?.penalityFormula ?? ""}
               inputRef={inputRef}
-              onChange={(formula) => onEditedChanged({ ...edited, penalityFormula })}
+              onChange={(penalityFormula) => onEditedChanged({ ...edited, penalityFormula })}
             />
           </Grid>
           <Grid item xs={6}>
@@ -129,6 +121,7 @@ const ContributionTabForm = (props) => {
                   <Button
                     variant="outlined"
                     color="primary"
+                    key={i}
                     onClick={() => insertAtCursor(c?.code)}
                     style={{ textTransform: "none", padding: "12px 20px", width: '100%', margin: 2 }}
                   >
