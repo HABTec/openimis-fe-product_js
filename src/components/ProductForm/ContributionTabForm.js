@@ -38,7 +38,7 @@ const ContributionTabForm = (props) => {
 
   function isValidMathExpression(expr) {
     const regex = /^\s*(?:\{[a-zA-Z_][a-zA-Z0-9_]*\}|\d*\.?\d+|\((?:[^()]+|\([^()]*\))*\))\s*(?:[+\-*/]\s*(?:\{[a-zA-Z_][a-zA-Z0-9_]*\}|\d*\.?\d+|\((?:[^()]+|\([^()]*\))*\))\s*)*$/;
-    if(!regex.test(expr)){
+    if(!regex.test(expr) && expr !== "") {
       return "Invalid Expression"
     }
   }
