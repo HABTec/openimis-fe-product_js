@@ -71,6 +71,10 @@
 
   "product.ContributionTabForm.discountsSectionTitle": "Gatii xiqqeessuu",
   "product.ContributionTabForm.graceSectionTitle": "Yeroo Dabalataa",
+  "product.ContributionTabForm.Year": "waggaa",
+  "product.ContributionTabForm.YearDescription": "Baay’ina waggoota inshuraansii itti darbe",
+  "product.ContributionTabForm.CalculatedPremium": "kaffaltii waliigalaa",
+  "product.ContributionTabForm.CalculatedPremiumDescription": "Kaffaltii waliigalaa waggaa 1 maatii tokkoof",
   "product.EnrollmentTabForm.enrollmentTitle": "Yeroo Galmee",
   "product.EnrollmentTabForm.converanceTitle": "Yeroo Inshuraansii",
   "product.PaymentTabForm.paymentTitle": "Sadarkaa kaffaltii",
@@ -183,5 +187,6 @@
   "product.gql_mutation_products_add_perms": "Oomisha | Oomishawwan dabaluu Jijjiiru",
   "product.gql_mutation_products_edit_perms": "Oomisha | Oomishawwan gulaaluu Jijjiiru",
   "product.gql_mutation_products_delete_perms": "Oomisha | Oomishawwan haquu Jijjiiru",
-  "product.gql_mutation_products_duplicate_perms": "Oomisha | Oomishawwan irra deddeebi’i Jijjiiru"
+  "product.gql_mutation_products_duplicate_perms": "Oomisha | Oomishawwan irra deddeebi’i Jijjiiru",
+  "product.PanishmentFormula":"foormulaa adabbii"
 }

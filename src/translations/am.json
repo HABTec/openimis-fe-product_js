@@ -71,6 +71,10 @@
 
   "product.ContributionTabForm.discountsSectionTitle": "ቅናሾች",
   "product.ContributionTabForm.graceSectionTitle": "የጊዜ ማራዘሚያዎች",
+  "product.ContributionTabForm.Year": "አመት",
+  "product.ContributionTabForm.YearDescription": "ኢንሹራንስ ሰጪው ያመለጠባቸው ዓመታት ብዛት",
+  "product.ContributionTabForm.CalculatedPremium": "ጠቅላላ ክፍያ",
+  "product.ContributionTabForm.CalculatedPremiumDescription": "ለአንድ ቤተሰብ 1 ዓመት ጠቅላላ ክፍያ",
   "product.EnrollmentTabForm.enrollmentTitle": "የመመዝገቢያ ጊዜ",
   "product.EnrollmentTabForm.converanceTitle": "የኢንሹራንስ ጊዜ",
   "product.PaymentTabForm.paymentTitle": "ቀስ በቀስ ክፍያ",
@@ -145,5 +149,6 @@
   "product.DeductiblesCeilingsTabForm.ceilingDiscriminationExplanation": "ሆስፒታል እና ሆስፒታል ያልሆኑ እንክብካቤዎች በጤና ተቋም አይነት (ሆስፒታል/ሆስፒታል ያልሆነ) ወይም በይገባኛል አይነት (የውስጥ/የውጭ ታካሚ) መሰረት እንደሚወሰኑ ይግለጹ።",
   "product.DeductiblesCeilingsTabForm.all": "ሁሉም",
   "product.DeductiblesCeilingsTabForm.hospitals": "ሆስፒታሎች",
-  "product.DeductiblesCeilingsTabForm.nonHospitals": "ሆስፒታል ያልሆኑ"
+  "product.DeductiblesCeilingsTabForm.nonHospitals": "ሆስፒታል ያልሆኑ",
+  "product.PanishmentFormula":"የቅጣት ቀመር"
 }

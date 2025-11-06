@@ -71,6 +71,10 @@
 
   "product.ContributionTabForm.discountsSectionTitle": "Discounts",
   "product.ContributionTabForm.graceSectionTitle": "Grace Periods",
+  "product.ContributionTabForm.Year": "Year",
+  "product.ContributionTabForm.YearDescription": "Number of years the insuree missed",
+  "product.ContributionTabForm.CalculatedPremium": "Calculated Premium",
+  "product.ContributionTabForm.CalculatedPremiumDescription": "Total calculated premium for the year",
   "product.EnrollmentTabForm.enrollmentTitle": "Enrollment Period",
   "product.EnrollmentTabForm.converanceTitle": "Insurance Coverage Period",
   "product.PaymentTabForm.paymentTitle": "Sliding scale",
