@@ -8,7 +8,7 @@ export const GRAPHQL_USE_PRODUCTS_PRODUCT_FRAGMENT = `
     uuid
     name
     code
-    location {id name uuid code parent {id name uuid code}}
+    location {id name uuid code parent {id name uuid code parent {id name uuid code parent {id name uuid code}}}}
     enrolmentPeriodStartDate
     enrolmentPeriodEndDate
     membershipTypes{
@@ -84,7 +84,7 @@ export const GRAPHQL_USE_PRODUCT_PRODUCT_FRAGMENT = `
     name
     ageMaximal
     threshold
-    location {id uuid code name parent {id uuid name code}}
+    location {id uuid code name parent {id uuid name code parent {id name uuid code parent {id name uuid code}}}}
 
     validityFrom
     validityTo
