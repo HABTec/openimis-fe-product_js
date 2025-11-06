@@ -75,8 +75,8 @@ const ProductSearcher = (props) => {
     return [
       (p) => p.code,
       (p) => p.name,
-      (p) => formatLocation(p.location?.parent?.parent ?? p.location?.parent ?? p.location),
-      (p) => formatLocation(p.location?.parent?.parent ? p.location?.parent : (p.location?.parent ? p.location : null)),
+      (p) => formatLocation(p.location?.parent?.parent?.parent ?? p.location?.parent?.parent ?? p.location?.parent ?? p.location),
+      (p) => formatLocation(p.location?.parent?.parent?.parent ?  p.location?.parent?.parent:(p.location?.parent?.parent ? p.location?.parent : (p.location?.parent ? p.location : null))),
       (p) => formatDateFromISO(p.dateFrom),
       (p) => formatDateFromISO(p.dateTo),
       (p) => p.maxMembers,
