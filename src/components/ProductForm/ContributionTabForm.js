@@ -71,6 +71,7 @@ const ContributionTabForm = (props) => {
         <NumberInput
           module="product"
           min={0}
+          required
           label="registrationFee"
           readOnly={readOnly}
           value={edited?.registrationFee ?? ""}
@@ -94,6 +95,7 @@ const ContributionTabForm = (props) => {
           min={0}
           max={100}
           label="additionalWifePayment"
+          required
           readOnly={readOnly}
           value={edited?.additionalSpouseContribution ?? ""}
           onChange={(additionalSpouseContribution) => onEditedChanged({ ...edited, additionalSpouseContribution })}
@@ -127,10 +129,12 @@ const ContributionTabForm = (props) => {
                   >
                     <Box display="flex" flexDirection="column" alignItems="flex-start" width="100%">
                       <Typography variant="body1" style={{ fontWeight: "bold" }}>
-                        {c?.name}
+                        {formatMessage("product.ContributionTabForm."+c?.code)}
+                        {/* {"product.ContributionTabForm"+c?.code} */}
                       </Typography>
                       <Typography variant="caption" color="inherit">
-                        {c?.description}
+                        {/* {c?.description} */}
+                        {formatMessage("product.ContributionTabForm."+c?.code+"Description")}
                       </Typography>
                     </Box>
                   </Button>
