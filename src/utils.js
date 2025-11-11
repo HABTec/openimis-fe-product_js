@@ -8,15 +8,18 @@ export const validateProductForm = (values, rules, isProductCodeValid) => {
   const REQUIRED_FIELDS = [
     "code",
     "name",
+    "location",
+    "ageMaximal",
     "enrolmentPeriodStartDate",
     "enrolmentPeriodEndDate",
     "coveragePeriodStartDate",
     "coveragePeriodEndDate",
-    "location",
-    "cardReplacementFee",
-    "membershipTypes",
     "premiumAdult",
-    "additionalSpouseContribution"
+    "registrationFee",
+    "cardReplacementFee",
+    "additionalSpouseContribution",
+    "penalityFormula",
+    "membershipTypes",
   ];
   const errors = {};
 

@@ -88,8 +88,9 @@ const MainPanelForm = (props) => {
       </Grid>
       <Grid item xs={3} className={classes.item}>
         <PublishedComponent
+        required
           pubRef="location.RegionPicker"
-          value={edited.location?.parent?.parent ?? edited.location?.parent ?? edited.location }
+          value={edited.location?.parent?.parent?.parent ?? edited.location?.parent?.parent ?? edited.location?.parent ?? edited.location }
           readOnly={readOnly}
           withNull={false}
           onChange={(location) => onEditedChanged({ ...edited, location })}
@@ -98,7 +99,7 @@ const MainPanelForm = (props) => {
       <Grid item xs={3} className={classes.item}>
         <PublishedComponent
           region={edited.location?.parent || edited.location}
-          value={edited.location?.parent?.parent ? edited.location.parent : null}
+          value={edited.location?.parent?.parent?.parent ?  edited.location?.parent?.parent:(edited.location?.parent?.parent ? edited.location?.parent : (edited.location?.parent ? edited.location : null))}
           pubRef="location.DistrictPicker"
           withNull={false}
           readOnly={readOnly}
@@ -109,7 +110,7 @@ const MainPanelForm = (props) => {
         <PublishedComponent
           pubRef="location.LocationPicker"
           onChange={(location) =>onEditedChanged({ ...edited, location: location || edited.location?.parent?.parent })}
-          required
+          
           readOnly={readOnly}
           // filterOptions={filterParents}
           value={edited.location?.parent?.parent ? edited.location : null}
@@ -119,6 +120,7 @@ const MainPanelForm = (props) => {
       <Grid item xs={3} className={classes.item}>
         <NumberInput
           min={0}
+          required
           module="product"
           label="ageMaximal"
           readOnly={readOnly}
@@ -126,7 +128,7 @@ const MainPanelForm = (props) => {
           onChange={(ageMaximal) => onEditedChanged({ ...edited, ageMaximal })}
         />
       </Grid>
-     
+     {JSON.stringify(edited.location)}
     </Grid>
   );
 };
