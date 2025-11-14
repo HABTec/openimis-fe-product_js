@@ -128,8 +128,7 @@ const MainPanelForm = (props) => {
           onChange={(ageMaximal) => onEditedChanged({ ...edited, ageMaximal })}
         />
       </Grid>
-     {JSON.stringify(edited.location)}
-    </Grid>
+     </Grid>
   );
 };
 
