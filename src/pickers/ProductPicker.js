@@ -37,7 +37,7 @@ const ProductPicker = (props) => {
     data: { products },
   } = useProductsQuery({ filters }, { skip: true });
   const shouldShowTooltip = products.length >= PRODUCT_QUANTITY_LIMIT && !value && !currentString;
-  console.log(enrollmentDate);
+
   return (
     <Autocomplete
       multiple={multiple}
