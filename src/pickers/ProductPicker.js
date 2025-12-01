@@ -37,7 +37,7 @@ const ProductPicker = (props) => {
     data: { products },
   } = useProductsQuery({ filters }, { skip: true });
   const shouldShowTooltip = products.length >= PRODUCT_QUANTITY_LIMIT && !value && !currentString;
-
+  console.log(enrollmentDate);
   return (
     <Autocomplete
       multiple={multiple}
@@ -57,6 +57,12 @@ const ProductPicker = (props) => {
           first: PRODUCT_QUANTITY_LIMIT,
           search,
           location: locationId,
+          ...(enrollmentDate
+            ? {
+                dateFrom: moment(enrollmentDate).format(DATE_FORMAT),
+                dateTo: moment(enrollmentDate).format(DATE_FORMAT),
+              }
+            : {})
         }))
       }
       renderInput={(inputProps) => (
