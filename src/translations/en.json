@@ -188,7 +188,7 @@
   "product.gql_mutation_products_edit_perms": "Product | Mutation Products Edit",
   "product.gql_mutation_products_delete_perms": "Product | Mutation Products Delete",
   "product.gql_mutation_products_duplicate_perms": "Product | Mutation Products Duplicate",
-  "product.PanishmentFormula":"Penality Formula",
+  "product.PanishmentFormula":"Penalty Formula",
   "product.enrolmentPeriodError":"Enrolment Period Start Date must be before End Date",
   "product.coveragePeriodError":"Coverage Period Start Date must be before End Date"
 }
