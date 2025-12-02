@@ -40,7 +40,10 @@ export const validateProductForm = (values, rules, isProductCodeValid) => {
     errors.enrolmentPeriodStartDate = true;
     errors.enrolmentPeriodEndDate = true;
   }
-
+  if (values.coveragePeriodStartDate > values.coveragePeriodEndDate) {
+    errors.coveragePeriodStartDate = true;
+    errors.coveragePeriodEndDate = true;
+  }
 
   if (!isProductCodeValid) {
     errors.isProductCodeInvalid = true;
