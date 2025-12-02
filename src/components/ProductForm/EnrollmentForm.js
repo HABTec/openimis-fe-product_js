@@ -35,6 +35,11 @@ const EnrollmentForm = (props) => {
                     onChange={(endDate) => onEditedChanged({ ...edited, enrolmentPeriodEndDate: endDate })}
                 />
             </Grid>
+            <Grid item xs={6} className={classes.item}>
+                {edited?.enrolmentPeriodStartDate && edited?.enrolmentPeriodEndDate && (edited.enrolmentPeriodEndDate < edited?.enrolmentPeriodStartDate) && (
+                    <span style={{ color: "red" }}>{formatMessage("product.enrolmentPeriodError")}</span>
+                )}
+            </Grid>
             <Grid item xs={12}>
                 <SectionTitle label={formatMessage("converanceTitle")} />
             </Grid>
@@ -60,7 +65,11 @@ const EnrollmentForm = (props) => {
                     onChange={(endDate) => onEditedChanged({ ...edited, coveragePeriodEndDate: endDate })}
                 />
             </Grid>
-
+            <Grid item xs={6} className={classes.item}>
+                {edited?.coveragePeriodStartDate && edited?.coveragePeriodEndDate && (edited.coveragePeriodEndDate < edited?.coveragePeriodStartDate) && (
+                    <span style={{ color: "red" }}>{formatMessage("product.coveragePeriodError")}</span>
+                )}
+            </Grid>
         </Grid>
     );
 };
