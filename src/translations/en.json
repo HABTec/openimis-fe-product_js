@@ -190,5 +190,6 @@
   "product.gql_mutation_products_duplicate_perms": "Product | Mutation Products Duplicate",
   "product.PanishmentFormula":"Penality Formula",
   "product.enrolmentPeriodError":"Enrolment Period Start Date must be before End Date",
-  "product.coveragePeriodError":"Coverage Period Start Date must be before End Date"
+  "product.coveragePeriodError":"Coverage Period Start Date must be before End Date",
+  "product.dateOrderError":"Coverage Period should be after Enrolment Period"
 }
