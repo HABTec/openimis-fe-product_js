@@ -70,6 +70,11 @@ const EnrollmentForm = (props) => {
                     <span style={{ color: "red" }}>{formatMessage("product.coveragePeriodError")}</span>
                 )}
             </Grid>
+            <Grid item xs={6} className={classes.item}>
+                {edited?.coveragePeriodStartDate && edited?.enrolmentPeriodEndDate && (edited.coveragePeriodStartDate < edited?.enrolmentPeriodEndDate) && (
+                    <span style={{ color: "red" }}>{formatMessage("product.dateOrderError")}</span>
+                )}
+            </Grid>
         </Grid>
     );
 };
