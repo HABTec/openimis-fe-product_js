@@ -105,52 +105,7 @@ const ProductFilters = (props) => {
             </Grid>
           }
         />
-        <ControlledField
-          module="product"
-          id="product.dateFrom"
-          field={
-            <Grid item xs={3} className={classes.item}>
-              <PublishedComponent
-                pubRef="core.DatePicker"
-                value={filters?.dateFrom?.value}
-                module="product"
-                label="product.dateFrom"
-                onChange={(d) =>
-                  onChangeFilters([
-                    {
-                      id: "dateFrom",
-                      value: d,
-                      filter: d ? moment(d).format() : null,
-                    },
-                  ])
-                }
-              />
-            </Grid>
-          }
-        />
-        <ControlledField
-          module="product"
-          id="product.dateTo"
-          field={
-            <Grid item xs={3} className={classes.item}>
-              <PublishedComponent
-                pubRef="core.DatePicker"
-                value={filters?.dateTo?.value}
-                module="product"
-                label="product.dateTo"
-                onChange={(d) =>
-                  onChangeFilters([
-                    {
-                      id: "dateTo",
-                      value: d,
-                      filter: d ? moment(d).format() : null,
-                    },
-                  ])
-                }
-              />
-            </Grid>
-          }
-        />
+        
         <ControlledField
           module="product"
           id="showHistory"
