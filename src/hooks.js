@@ -11,6 +11,8 @@ export const GRAPHQL_USE_PRODUCTS_PRODUCT_FRAGMENT = `
     location {id name uuid code parent {id name uuid code parent {id name uuid code parent {id name uuid code}}}}
     enrolmentPeriodStartDate
     enrolmentPeriodEndDate
+    coveragePeriodEndDate
+    coveragePeriodStartDate
     membershipTypes{
         id
         region{
