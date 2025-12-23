@@ -15,14 +15,7 @@ export const GRAPHQL_USE_PRODUCTS_PRODUCT_FRAGMENT = `
     coveragePeriodStartDate
     membershipTypes{
         id
-        region{
-        name
-        id}
-        
-        district{
-        name
-        id
-        }
+       
         levelType
         levelIndex
         price
@@ -153,14 +146,7 @@ export const GRAPHQL_USE_PRODUCT_PRODUCT_FRAGMENT = `
     cardReplacementFee
     membershipTypes {
         id
-        region{
-        name
-        id}
         
-        district{
-        name
-        id
-        }
         levelType
         levelIndex
         price
