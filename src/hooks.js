@@ -11,16 +11,11 @@ export const GRAPHQL_USE_PRODUCTS_PRODUCT_FRAGMENT = `
     location {id name uuid code parent {id name uuid code parent {id name uuid code parent {id name uuid code}}}}
     enrolmentPeriodStartDate
     enrolmentPeriodEndDate
+    coveragePeriodEndDate
+    coveragePeriodStartDate
     membershipTypes{
         id
-        region{
-        name
-        id}
-        
-        district{
-        name
-        id
-        }
+       
         levelType
         levelIndex
         price
@@ -151,14 +146,7 @@ export const GRAPHQL_USE_PRODUCT_PRODUCT_FRAGMENT = `
     cardReplacementFee
     membershipTypes {
         id
-        region{
-        name
-        id}
         
-        district{
-        name
-        id
-        }
         levelType
         levelIndex
         price
